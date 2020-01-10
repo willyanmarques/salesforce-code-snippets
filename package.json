@@ -3,6 +3,7 @@
     "displayName": "Salesforce Code Snippets",
     "description": "Custom snippets from Salesforce language (apex, lightning)",
     "version": "1.0.0",
+    "publisher": "<Arthur and Willyan/>",
     "icon": "icon.png",
     "repository": {
         "type": "git",
