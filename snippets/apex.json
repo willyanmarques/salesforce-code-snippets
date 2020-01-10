@@ -1,0 +1,209 @@
+{
+    "foreach": {
+        "prefix": "scs-for",
+        "body": [
+            "for (${1:Object} ${2:var}: ${3:list}){",
+            "	$0",
+            "}"
+        ],
+        "description": "foreach",
+    },
+
+    "foreachWithSelect": {
+        "prefix": "scs-fors",
+        "body": [
+            "for (${1:Object} ${2:var}: [SELECT ${3:fields} FROM $1 WHERE ${4:where}]){",
+            "	$0",
+            "}"
+        ],
+        "description": "foreach with select",
+    },
+
+    "ifElse": {
+        "prefix": "scs-ifelse",
+        "body": [
+            "if (${1:condition}){",
+            "	$0",
+            "} else {",
+            "	",
+            "}"
+        ],
+        "description": "if-else"
+    },
+
+    "debug": {
+        "prefix": "scs-debug",
+        "body": [
+            "System.debug('$1: ' + ${1:var});"
+        ]
+    },
+
+    "var": {
+        "prefix": "scs-var",
+        "body": [
+            "${1:Instance} ${2:var} = new $1();"
+        ]
+    },
+
+    "map": {
+        "prefix": "scs-map",
+        "body": [
+            "Map<Id,${1:Instance}> ${2:var} = new Map<Id,$1>();"
+        ]
+    },
+
+    "list": {
+        "prefix": "scs-list",
+        "body": [
+            "List<${1:Instance}> ${2:var} = new List<$1>();"
+        ]
+    },
+
+    "set": {
+        "prefix": "scs-set",
+        "body": [
+            "Set<${1:Instance}> ${2:var} = new Set<$1>();"
+        ]
+    },
+
+    "soql-list": {
+        "prefix": "scs-soql-list",
+        "body": [
+            "List<${1:Object}> ${2:var} = [SELECT ${3:fields} FROM $1 WHERE ${4:where}];"
+        ]
+    },
+
+    "soql-map": {
+        "prefix": "scs-soql-map",
+        "body": [
+            "Map<Id, ${1:Object}> ${2:var} = [SELECT ${3:fields} FROM $1 WHERE ${4:where}];"
+        ]
+    },
+
+    "soql": {
+        "prefix": "scs-soql",
+        "body": [
+            "[SELECT ${1:fields} FROM ${2:Object:} WHERE ${3:where}]"
+        ]
+    },
+
+    "http-request": {
+        "prefix": "scs-request",
+        "body": [
+            "Http http = new Http();",
+            "HttpRequest req = new HttpRequest();",
+            "req.setEndpoint('${1:endpoint}');",
+            "req.setMethod('${2:method}');",
+            "req.setHeader('${3:header}');",
+            "HttpResponse res = http.send(req);",
+            "if(res.getStatusCode() == 200){",
+            "	$0",
+            "} else{",
+            "	",
+            "}"
+        ]
+    },
+
+    "autoScheduleBatch": {
+        "prefix": "scs-autoScheduleBatch",
+        "body": [
+            "System.scheduleBatch(new ${1:batch}(), 'Job $1' + system.now().format('dd.MM.yyyy-HH.mm.ss.SSS'), ${2:minutes from now}, ${3:batch size});"
+        ]
+    },
+
+    "start-batch": {
+        "prefix": "scs-batch",
+        "body": [
+            "${1:batch class} batch = $1();",
+            "database.executeBatch(batch,${2:size});"
+        ]
+    },
+
+    "dml-database": {
+        "prefix": "scs-dml",
+        "body": [
+            "Database.SaveResult result = Database.${1:DML}(${2:var}, false);",
+            "if (!result.isSuccess()) {",
+            "	for (Database.Error err : result.getErrors()) {",
+            "		mensagemGenerica = err.getMessage();",
+            "	}",
+            "} else {",
+            "	$0",
+            "}"
+        ],
+        "description": "DML's with SaveResul[]"
+    },
+
+    "getRecordTypeId": {
+        "prefix": "scs-getRecordTypeId",
+        "body": [
+            "Id ID$2 = Schema.SObjectType.${1:Object}.getRecordTypeInfosByDeveloperName().get('${2:Developer_Name}').getRecordTypeId();"
+        ]
+    },
+
+    // "email":{
+    // 	"prefix": "email sendEmail",
+    // 	"body": [
+    // 		Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
+    // 		//email.setToAddresses( destinatarios );
+    // 		email.setOrgWideEmailAddressId( [ SELECT Id, DisplayName, Address FROM OrgWideEmailAddress 
+    // 										WHERE Address =: 'naoresponda@sulamerica.com.br' LIMIT 1 ].get(0).Id );
+    // 		email.setTemplateId( [ SELECT id FROM EmailTemplate 
+    // 								WHERE DeveloperName = 'Conclusao_ao_Prestador' LIMIT 1 ].get(0).Id );
+    // 		email.setWhatId( casoId );
+    // 		email.setSaveAsActivity( false );
+    // 		email.setTargetObjectId( casoOwnerId );
+    // 		email.setTreatTargetObjectAsRecipient(false);
+    // 		List<Messaging.SingleEmailMessage> msgEnviadas = new List<Messaging.SingleEmailMessage>();
+    // 		msgEnviadas.add(email);
+
+    // 		if(!msgEnviadas.isEmpty() && !Test.isRunningTest()){
+    // 			Messaging.sendEmail(msgEnviadas);
+    // 		}
+    // 	]
+    // }
+
+    "approvalProcess": {
+        "prefix": "scs-approvalProcess",
+        "body": [
+            "Approval.ProcessSubmitRequest ${1:approvalRequest} = new Approval.ProcessSubmitRequest();",
+            "$1.setObjectId(${2:Id objectId});",
+            "$1.setSubmitterId(${3:Id userId});",
+            "$1.setProcessDefinitionNameOrId(${4:String approvalProcessApiMName});",
+            "$1.setSkipEntryCriteria(true);",
+            "Approval.ProcessResult processResult = Approval.process($1, false);"
+        ]
+    },
+
+    "deserialize": {
+        "prefix": "scs-deserialize",
+        "body": [
+            "${1:ResponseClass} response = ($1) JSON.deserialize(${2:jsonResponse}, $1.class);"
+        ]
+    },
+
+    "deserializeUntyped": {
+        "prefix": "scs-deserializeUntyped",
+        "body": [
+            "Map<String, Object> ${1:response} = (Map<String, Object>) JSON.deserializeUntyped(${2:jsonResponse}.getBody());"
+        ]
+    },
+
+    "serialize": {
+        "prefix": "scs-serialize",
+        "body": [
+            "JSON.serialize(${1:var})$0"
+        ]
+    },
+
+    "ifMapContainsKey": {
+        "prefix": "scs-ifcontainsKey scs-ifMapContainsKey",
+        "body": [
+            "if (${1:map}.containsKey()) {",
+            "	$0",
+            "}"
+        ]
+    }
+
+
+}

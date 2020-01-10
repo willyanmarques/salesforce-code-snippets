@@ -1,0 +1,47 @@
+{
+    "function": {
+        "prefix": "scs-function",
+        "body": [
+            "${1:functionName}: function (cmp, event, helper) {"
+            "	$0",
+            "}"
+        ],
+        "description": ""
+    },
+    "action": {
+        "prefix": "scs-action",
+        "body": [
+            "var action = cmp.get(\"c.${1:apexMethod}\");",
+            "action.setParams({",
+            "	${2:param} : ${3:value}",
+            "});",
+            "action.setCallback(this, \\$A.getCallback(function(response) {",
+            "	var response = response.getReturnValue();",
+            "	console.log(response);",
+            "}));",
+            "\\$A.enqueueAction(action);"
+        ],
+        "description": ""
+    },
+    "toast": {
+        "prefix": "scs-toast",
+        "body": [
+            "showToast: function(type, message) {",
+            "	var toastEvent = \\$A.get(\"e.force:showToast\");",
+            "	toastEvent.setParams({",
+            "		\"type\": type,",
+            "		\"message\": message",
+            "	});",
+            "	toastEvent.fire();",
+            "}"
+        ],
+        "description": ""
+    },
+    "today": {
+        "prefix": "scs-date-dd/mm/yyy",
+        "body": [
+            "\\$A.localizationService.formatDate(new Date(), \"DD/MM/YYYY\");"
+        ],
+        "description": ""
+    }
+}

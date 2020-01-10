@@ -1,0 +1,48 @@
+{
+    "attribute": {
+        "prefix": "scs-attr",
+        "body": [
+            "<aura:attribute name=\"${1:name}\" type=\"${2:type}\" default=\"$0\" />"
+        ],
+        "description": ""
+    },
+    "attributeList": {
+        "prefix": "scs-attrList",
+        "body": [
+            "<aura:attribute name=\"${1:name}\" type=\"List\" default=\"[",
+            "   {'label': '${2:label}', 'value': '${3:value}'}",
+            "   ]\"/>"
+        ],
+        "description": ""
+    },
+    "doInt": {
+        "prefix": "scs-doInit",
+        "body": [
+            "<aura:handler name=\"init\" value=\"{!this}\" action=\"{!c.${1:controllerDoInit}}\" />"
+        ],
+        "description": ""
+    },
+    "input": {
+        "prefix": "scs-input",
+        "body": [
+            "<lightning:input type=\"${1:type}\" aura:id=\"${2:id}\" label=\"${3:label}\" value=\"$0\" />"
+        ],
+        "description": ""
+    },
+    "combobox": {
+        "prefix": "scs-combobox",
+        "body": [
+            "<lightning:combobox name=\"${1:name}\" label=\"${2:label}\" value=\"${3:value}\" placeholder=\"${4:placeholder}\" options=\"{!v.${5:optionsList}}\" onchange=\"{!c.${6:handleChange}}\"/>"
+        ],
+        "description": ""
+    },
+    "auraif": {
+        "prefix": "scs-auraif",
+        "body": [
+            "<aura:if isTrue=\"{!v.${1:attribute}}\">",
+            "   $0",
+            "</aura:if>"
+        ],
+        "description": ""
+    }
+}

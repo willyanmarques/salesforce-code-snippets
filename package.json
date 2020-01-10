@@ -1,0 +1,32 @@
+{
+    "name": "salesforce-code-snippets",
+    "displayName": "Salesforce Code Snippets",
+    "description": "Custom snippets from Salesforce language (apex, lightning)",
+    "version": "1.0.0",
+    "icon": "icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/willyanmarques/salesforce-code-snippets"
+    },
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [{
+                "language": "html",
+                "path": "./snippets/html.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/javascript.json"
+            },
+            {
+                "language": "apex",
+                "path": "./snippets/apex.json"
+            }
+        ]
+    }
+}
