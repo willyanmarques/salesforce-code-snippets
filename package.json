@@ -1,9 +1,9 @@
 {
     "name": "salesforce-code-snippets",
     "displayName": "Salesforce Code Snippets",
-    "description": "Custom snippets from Salesforce language (apex, lightning)",
+    "description": "Custom snippets for Salesforce plataform (apex, lightning)",
     "version": "1.0.0",
-    "publisher": "<Arthur and Willyan/>",
+    "publisher": "Arthur Araujo and Willyan Marques",
     "icon": "icon.png",
     "repository": {
         "type": "git",

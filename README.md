@@ -1,4 +1,4 @@
-# salesforce-code-snippets README
+# README
 
 This is extension is focused in improve development of Salesforce Plataform (Apex, Lightning) given more agility and efficiency to your code skills.
 

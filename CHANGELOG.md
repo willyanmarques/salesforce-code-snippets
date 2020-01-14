@@ -3,7 +3,7 @@
 All notable changes to the "salesforce-code-snippets" extension will be documented in this file.
 
 ## [1.0.0]
-- html, javascript, apex
+- Apex and Lightning
 
 ## [Unreleased]
 
