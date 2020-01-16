@@ -141,28 +141,6 @@
         ]
     },
 
-    // "email":{
-    // 	"prefix": "scs-email scs-send-email",
-    // 	"body": [
-    // 		Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
-    // 		//email.setToAddresses( destinatarios );
-    // 		email.setOrgWideEmailAddressId( [ SELECT Id, DisplayName, Address FROM OrgWideEmailAddress 
-    // 										WHERE Address =: 'naoresponda@sulamerica.com.br' LIMIT 1 ].get(0).Id );
-    // 		email.setTemplateId( [ SELECT id FROM EmailTemplate 
-    // 								WHERE DeveloperName = 'Conclusao_ao_Prestador' LIMIT 1 ].get(0).Id );
-    // 		email.setWhatId( casoId );
-    // 		email.setSaveAsActivity( false );
-    // 		email.setTargetObjectId( casoOwnerId );
-    // 		email.setTreatTargetObjectAsRecipient(false);
-    // 		List<Messaging.SingleEmailMessage> msgEnviadas = new List<Messaging.SingleEmailMessage>();
-    // 		msgEnviadas.add(email);
-
-    // 		if(!msgEnviadas.isEmpty() && !Test.isRunningTest()){
-    // 			Messaging.sendEmail(msgEnviadas);
-    // 		}
-    // 	]
-    // },
-
     "approvalProcess": {
         "prefix": "scs-approvalProcess",
         "body": [
