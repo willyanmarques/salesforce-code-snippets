@@ -6,19 +6,23 @@ This is extension is focused in improve development of Salesforce Plataform (Ape
 
 Here is some examples how to use and how good and pratice is use it.
 
-### Apex
+## Component demostration
 
-![Javascript demo](/demos/javascript.gif)
+![component demo](https://github.com/willyanmarques/salesforce-code-snippets/blob/master/demos/component.gif)
 
-### Lightning
+## JavaScript demostration
 
-\!\[feature X\]\(images/feature-x.png\)
+![javascript demo](https://raw.githubusercontent.com/willyanmarques/salesforce-code-snippets/master/demos/javascript.gif)
+
+## Apex demostration
+
+![apex demo](https://github.com/willyanmarques/salesforce-code-snippets/blob/master/demos/apex.gif)
 
 
-## Release Notes
+## Developers
+    - Arthur Araujo [https://www.linkedin.com/in/araujoarthur/]
+    - Willyan Marques [https://www.linkedin.com/in/willyanmarques/]
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
+### V1.0.0
 
 Initial release of Salesforce Code Snippets

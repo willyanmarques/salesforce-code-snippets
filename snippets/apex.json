@@ -156,14 +156,14 @@
     "deserialize": {
         "prefix": "scs-deserialize",
         "body": [
-            "${1:ResponseClass} response = ($1) JSON.deserialize(${2:jsonResponse}, $1.class);"
+            "${1:objectType} response = ($1) JSON.deserialize(${2:jsonResponse}, $1.class);"
         ]
     },
 
     "deserializeUntyped": {
         "prefix": "scs-deserializeUntyped",
         "body": [
-            "Map<String, Object> ${1:response} = (Map<String, Object>) JSON.deserializeUntyped(${2:jsonResponse}.getBody());"
+            "Map<String, Object> ${1:response} = (Map<String, Object>) JSON.deserializeUntyped(${2:jsonResponse});"
         ]
     },
 
@@ -233,7 +233,7 @@
         ]
     },
 
-    "wrapperCustomItem":{
+    "wrapperCustomItem": {
         "prefix": "scs-wrapper-custom-item scs-wrapper-custom-field",
         "body": [
             "public ${1:InnerClass} ${2:name} { get; set; }",
@@ -244,10 +244,19 @@
         ]
     },
 
-    "wrapperItem":{
+    "wrapperItem": {
         "prefix": "scs-wrapper-item scs-wrapper-field",
         "body": [
             "public ${1:Object} ${2:name} { get; set; }"
+        ]
+    },
+
+    "auraInnerClass": {
+        "prefix": "scs-wrapper-aura",
+        "body": [
+            "public class ${1:className}  {",
+            "   @AuraEnabled public ${2:type} ${3:var};",
+            "}"
         ]
     }
 

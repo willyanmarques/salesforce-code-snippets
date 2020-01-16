@@ -1,5 +1,5 @@
 {
-    "Function": {
+    "function": {
         "prefix": "scs-function",
         "body": [
             "${1:functionName}: function (cmp, event, helper) {"
@@ -8,7 +8,7 @@
         ],
         "description": ""
     },
-    "Action": {
+    "action": {
         "prefix": "scs-action",
         "body": [
             "var action = cmp.get(\"c.${1:apexMethod}\");",
@@ -23,7 +23,7 @@
         ],
         "description": ""
     },
-    "Toast": {
+    "toast": {
         "prefix": "scs-toast",
         "body": [
             "showToast: function(type, message) {",
