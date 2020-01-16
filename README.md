@@ -8,7 +8,7 @@ Here is some examples how to use and how good and pratice is use it.
 
 ### Apex
 
-\!\[feature X\]\(images/feature-x.png\)
+![Javascript demo](/demos/javascript.gif)
 
 ### Lightning
 
