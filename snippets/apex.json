@@ -184,7 +184,7 @@
     },
 
     "batchClass": {
-        "prefix": "scs-new-batch-class scs-batchClass scs-batch-class",
+        "prefix": "scs-new-batchClass scs-batchClass",
         "body": [
             "global class ${1:nomeBatch} implements Database.Batchable<sObject>, Database.AllowsCallouts {",
             "",
@@ -258,7 +258,61 @@
             "   @AuraEnabled public ${2:type} ${3:var};",
             "}"
         ]
-    }
+    },
 
+    "emailMessage":{
+        "prefix": "scs-emailMessage",
+        "body": [
+            "Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();",
+            "message.setTargetObjectId(${1:target}.id);",
+            "message.setOrgWideEmailAddressId([SELECT Id FROM OrgWideEmailAddress WHERE Address = '${2:sender@email.com}' LIMIT 1].Id);",
+            "message.setTemplateID([SELECT Id FROM EmailTemplate WHERE DeveloperName ='${3:template_developer_name' LIMIT 1].Id);",
+            "message.setWhatId(${4:what.id});",
+            "message.setSaveAsActivity(${5:trueORfalse});",
+            "Messaging.SingleEmailMessage[] messages = new List<Messaging.SingleEmailMessage> {message};",
+            "Messaging.SendEmailResult[] results = Messaging.sendEmail(messages);",
+            "if (results[0].success) {",
+                "System.debug('The email was sent successfully.');",
+            "} else{",
+                "System.debug('The email failed to send: ' + results[0].errors[0].message);",
+            "}"
+        ]
+    },
+
+    "emailMessage-withEmailList":{
+        "prefix": "scs-emailMessage-emailList",
+        "body": [
+            "Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();",
+            "message.toAddresses = new List<String> {'${1:recipient@email.com}'};",
+            "message.setOrgWideEmailAddressId([SELECT Id FROM OrgWideEmailAddress WHERE Address = '${2:sender@email.com}' LIMIT 1].Id);",
+            "message.setTemplateID([SELECT Id FROM EmailTemplate WHERE DeveloperName ='${3:template_developer_name' LIMIT 1].Id);",
+            "message.setWhatId(${4:what.id});",
+            "message.setSaveAsActivity(${5:trueORfalse});",
+            "Messaging.SingleEmailMessage[] messages = new List<Messaging.SingleEmailMessage> {message};",
+            "Messaging.SendEmailResult[] results = Messaging.sendEmail(messages);",
+            "if (results[0].success) {",
+                "System.debug('The email was sent successfully.');",
+            "} else{",
+                "System.debug('The email failed to send: ' + results[0].errors[0].message);",
+            "}"
+        ]
+    },
+
+    "emailSimplest":{
+        "prefix": "scs-emailSimplest",
+        "body": [
+            "Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();",
+            "message.toAddresses = new String[] { '${1:recipient@email.com}'};",
+            "message.subject = '${2:subject}';",
+            "message.plainTextBody = '${2:body}';",
+            "Messaging.SingleEmailMessage[] messages = new List<Messaging.SingleEmailMessage> {message};",
+            "Messaging.SendEmailResult[] results = Messaging.sendEmail(messages);",
+            "if (results[0].success) {",
+                "System.debug('The email was sent successfully.');",
+            "} else{",
+                "System.debug('The email failed to send: ' + results[0].errors[0].message);",
+            "}"
+        ]
+    }
 
 }
