@@ -8,7 +8,7 @@ Here is some examples how to use and how good and pratice is use it.
 
 ## Component demostration
 
-![component demo](https://github.com/willyanmarques/salesforce-code-snippets/blob/master/demos/component.gif)
+![component demo](https://raw.githubusercontent.com/willyanmarques/salesforce-code-snippets/master/demos/component.gif)
 
 ## JavaScript demostration
 
@@ -16,7 +16,7 @@ Here is some examples how to use and how good and pratice is use it.
 
 ## Apex demostration
 
-![apex demo](https://github.com/willyanmarques/salesforce-code-snippets/blob/master/demos/apex.gif)
+![apex demo](https://raw.githubusercontent.com/willyanmarques/salesforce-code-snippets/master/demos/apex.gif)
 
 
 ## Developers
