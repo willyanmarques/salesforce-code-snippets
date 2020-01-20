@@ -3,7 +3,7 @@
     "displayName": "Salesforce Code Snippets",
     "description": "Custom snippets for Salesforce plataform",
     "version": "1.0.0",
-    "publisher": "Anbu",
+    "publisher": "DevPlenos",
     "icon": "icon.png",
     "repository": {
         "type": "git",
