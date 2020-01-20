@@ -1,4 +1,4 @@
-# README
+# Salesforce Code Snippets
 
 This is extension is focused in improve development of Salesforce Plataform (Apex, Lightning) given more agility and efficiency to your code skills.
 
@@ -9,20 +9,53 @@ Here is some examples how to use and how good and pratice is use it.
 ## Component demostration
 
 ![component demo](https://raw.githubusercontent.com/willyanmarques/salesforce-code-snippets/master/demos/component.gif)
-
 ## JavaScript demostration
 
 ![javascript demo](https://raw.githubusercontent.com/willyanmarques/salesforce-code-snippets/master/demos/javascript.gif)
-
 ## Apex demostration
 
 ![apex demo](https://raw.githubusercontent.com/willyanmarques/salesforce-code-snippets/master/demos/apex.gif)
 
 
+## Glossary
+
+### Apex
+
+<!-- |       Trigger       |               Content Preview              |
+| ------------------- | ------------------------------------------ |
+| scs-approvalProcess | -->
+* `scs-approvalProcess`
+* `scs-autoScheduleBatch`
+* `scs-batch-execute`
+* `scs-batchClass`
+* `scs-constant`
+* `scs-deserialize`
+* `scs-deserializeUntyped`
+* `scs-dml`
+* `scs-emailMessage`
+* `scs-emailMessage-emailList`
+* `scs-emailSimplest`
+* `scs-for`
+* `scs-fors`
+* `scs-getRecordTypeId`
+* `scs-ifcontainsKey`
+* `scs-ifelse`
+* `scs-list`
+* `scs-map`
+* `scs-request`
+* `scs-serialize`
+* `scs-set`
+* `scs-soql`
+* `scs-soql-list`
+* `scs-soql-map`
+* `scs-task`
+* `scs-var`
+* `scs-wrapper-item`
+* `scs-wrapper-custom-item`
+* `scs-wrapper-aura`
+
+
 ## Developers
-    - Arthur Araujo [https://www.linkedin.com/in/araujoarthur/]
-    - Willyan Marques [https://www.linkedin.com/in/willyanmarques/]
+> Arthur Araujo - https://www.linkedin.com/in/araujoarthur/
 
-### V1.0.0
-
-Initial release of Salesforce Code Snippets
+> Willyan Marques - https://www.linkedin.com/in/willyanmarques/

@@ -66,6 +66,13 @@
         ]
     },
 
+    "constant": {
+        "prefix": "scs-constant",
+        "body": [
+            "private static final String CONST_${1:name} = '${2:text}';"
+        ]
+    },
+
     "soql-list": {
         "prefix": "scs-soql-list",
         "body": [
@@ -114,8 +121,8 @@
     "start-batch": {
         "prefix": "scs-batch-execute",
         "body": [
-            "${1:batch class} batch = $1();",
-            "database.executeBatch(batch,${2:size});"
+            "${1:batch class} batch = new $1();",
+            "Database.executeBatch(batch,${2:size});"
         ]
     },
 
@@ -137,7 +144,7 @@
     "getRecordTypeId": {
         "prefix": "scs-getRecordTypeId",
         "body": [
-            "Id ID$2 = Schema.SObjectType.${1:Object}.getRecordTypeInfosByDeveloperName().get('${2:Developer_Name}').getRecordTypeId();"
+            "Id idRecType$2 = Schema.SObjectType.${1:Object}.getRecordTypeInfosByDeveloperName().get('${2:Developer_Name}').getRecordTypeId();"
         ]
     },
 
@@ -184,7 +191,7 @@
     },
 
     "batchClass": {
-        "prefix": "scs-new-batchClass scs-batchClass",
+        "prefix": "scs-batchClass scs-newBatchClass",
         "body": [
             "global class ${1:nomeBatch} implements Database.Batchable<sObject>, Database.AllowsCallouts {",
             "",
@@ -312,6 +319,21 @@
             "} else{",
                 "System.debug('The email failed to send: ' + results[0].errors[0].message);",
             "}"
+        ]
+    },
+
+    "task":{
+        "prefix": "scs-task",
+        "body": [
+            "Task task = new Task();",
+            "task.Description = ${1:description};",
+            "task.Subject = ${2:subject};",
+            "task.Status = ${3:status};",
+            "task.Priority = ${4:priority};",
+            "task.ActivityDate = Date.today();",
+            "task.WhatId = ${5:whatId};",
+            "task.IsReminderSet = false;",
+            "Insert task;"
         ]
     }
 
