@@ -54,6 +54,22 @@ Here is some examples how to use and how good and pratice is use it.
 * `scs-wrapper-custom-item`
 * `scs-wrapper-aura`
 
+### JavaScript
+
+* `scs-function`
+* `scs-action`
+* `scs-toast`
+* `scs-today`
+
+### Html
+
+* `scs-attribute`
+* `scs-attributeList`
+* `scs-doInt`
+* `scs-input`
+* `scs-combobox`
+* `scs-auraif`
+
 
 ## Developers
 > Arthur Araujo - https://www.linkedin.com/in/araujoarthur/
