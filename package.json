@@ -2,7 +2,7 @@
     "name": "salesforce-code-snippets",
     "displayName": "Salesforce Code Snippets",
     "description": "Custom snippets for Salesforce plataform",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "Helpers",
     "icon": "icon.png",
     "repository": {
