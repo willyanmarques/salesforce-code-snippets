@@ -69,6 +69,12 @@ Here is some examples how to use and how good and pratice is use it.
 * `scs-input`
 * `scs-combobox`
 * `scs-auraif`
+* `scs-button`
+* `scs-button-group`
+* `scs-datatable`
+* `scs-listView`
+* `scs-spinner`
+* `scs-aura-iteration`
 
 
 ## Developers
