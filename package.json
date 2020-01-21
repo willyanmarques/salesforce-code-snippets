@@ -1,39 +1,38 @@
 {
-	"name": "salesforce-code-snippets",
-	"displayName": "Salesforce Code Snippets",
-	"description": "Custom snippets for Salesforce plataform",
-	"version": "1.0.0",
-	"publisher": "DevPlenos",
-	"icon": "icon.png",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/willyanmarques/salesforce-code-snippets"
-	},
-	"engines": {
-		"vscode": "^1.41.0"
-	},
-	"categories": [
-		"Snippets"
-	],
-	"contributes": {
-		"snippets": [
-			{
-				"language": "html",
-				"path": "./snippets/html.json"
-			},
-			{
-				"language": "javascript",
-				"path": "./snippets/javascript.json"
-			},
-			{
-				"language": "apex",
-				"path": "./snippets/apex.json"
-			}
-		]
-	},
-	"__metadata": {
-		"id": "f6bd8bff-bb93-4b2d-821d-f8759d4c1bc8",
-		"publisherDisplayName": "Anbu",
-		"publisherId": "7db475ef-cec8-4bfa-be13-0ed630fe1b25"
-	}
+    "name": "salesforce-code-snippets",
+    "displayName": "Salesforce Code Snippets",
+    "description": "Custom snippets for Salesforce plataform",
+    "version": "1.0.0",
+    "publisher": "Helpers",
+    "icon": "icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/willyanmarques/salesforce-code-snippets"
+    },
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [{
+                "language": "html",
+                "path": "./snippets/html.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/javascript.json"
+            },
+            {
+                "language": "apex",
+                "path": "./snippets/apex.json"
+            }
+        ]
+    },
+    "__metadata": {
+        "id": "f6bd8bff-bb93-4b2d-821d-f8759d4c1bc8",
+        "publisherDisplayName": "Helpers",
+        "publisherId": "7db475ef-cec8-4bfa-be13-0ed630fe1b25"
+    }
 }
