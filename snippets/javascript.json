@@ -26,11 +26,12 @@
     "toast": {
         "prefix": "scs-toast",
         "body": [
-            "showToast: function(type, message) {",
+            "showToast: function(type, title, message) {",
             "	var toastEvent = \\$A.get(\"e.force:showToast\");",
             "	toastEvent.setParams({",
-            "		\"type\": ${1:type},",
-            "		\"message\": ${2:message}",
+            "		\"title\": ${1:title},",
+            "		\"type\": ${2:type},",
+            "		\"message\": ${3:message}",
             "	});",
             "	toastEvent.fire();",
             "}"
