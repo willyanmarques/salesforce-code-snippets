@@ -1,18 +1,17 @@
-# Change Log
+# [1.0.1] January 21th, 2020
 
-All notable changes to the "salesforce-code-snippets" extension will be documented in this file.
+## Added
+- **New HTML snippets**
+    - `scs-auraif`
+    - `scs-button`
+    - `scs-button-group`
+    - `scs-datatable`
+    - `scs-listView`
+    - `scs-spinner`
+    - `scs-aura-iteration`
 
-## [1.0.1]
-- added new snippet for html
-* `scs-auraif`
-* `scs-button`
-* `scs-button-group`
-* `scs-datatable`
-* `scs-listView`
-* `scs-spinner`
-* `scs-aura-iteration`
+## Fixed
+- **New parameter for toast snippet in HTML snippets**
 
-- added new parameter for toast snippet
-
-## [1.0.0]
-- Apex and Lightning
+# [1.0.0] January 20th, 2020
+- **Apex and Lightning**
