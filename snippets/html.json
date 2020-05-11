@@ -36,11 +36,23 @@
         ],
         "description": ""
     },
-    "auraif": {
-        "prefix": "scs-auraif",
+    "aura-if": {
+        "prefix": "scs-aura-if",
         "body": [
             "<aura:if isTrue=\"{!v.${1:attribute}}\">",
             "   $0",
+            "</aura:if>"
+        ],
+        "description": ""
+    },
+    "aura-if-else": {
+        "prefix": "scs-aura-if-else",
+        "body": [
+            "<aura:if isTrue=\"{!v.${1:attribute}}\">",
+            "   $2",
+            "   <aura:set attribute=\"else\">",
+            "       $0",
+            "   </aura:set>",
             "</aura:if>"
         ],
         "description": ""
