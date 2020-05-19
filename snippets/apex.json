@@ -111,6 +111,18 @@
         ]
     },
 
+    "schedulable-class": {
+        "prefix": "scs-schedulable-class",
+        "body": [
+            "global class scheduledBatchable implements Schedulable {",
+            "   global void execute(SchedulableContext sc) {",
+            "      batchable b = new batchable();",
+            "      database.executebatch(b);",
+            "   }",
+            "}"
+        ]
+    },
+
     "autoScheduleBatch": {
         "prefix": "scs-autoScheduleBatch",
         "body": [
@@ -138,9 +150,26 @@
             "	$0",
             "}"
         ],
+        "description": "DML's with SaveResul single record"
+    },
+    
+    "dml-list": {
+        "prefix": "scs-dml-list scs-dml-saveResult-list",
+        "body": [
+            "Database.SaveResult[] srList = Database.${1:DML}(${2:var}, false);",
+            "for (Database.SaveResult sr : srList) {",
+            "   if (!result.isSuccess()) {",
+            "	    for (Database.Error err : result.getErrors()) {",
+            "		    mensagemGenerica = err.getMessage();",
+            "	    }",
+            "   } else {",
+            "	    $0",
+            "   }"
+            "}"
+        ],
         "description": "DML's with SaveResul[]"
     },
-
+    
     "getRecordTypeId": {
         "prefix": "scs-getRecordTypeId",
         "body": [
@@ -203,7 +232,7 @@
             "        return recordList;",
             "    }",
             "",
-            "    global void execute(Database.BatchableContext jobId, List<Case> recordList) {",
+            "    global void execute(Database.BatchableContext jobId, List<$2> recordList) {",
             "        $0",
             "    }",
             "",
@@ -211,7 +240,7 @@
             "        list<CronTrigger> ct = [SELECT CronExpression, CronJobDetailId, CronJobDetail.Name, Id, State FROM CronTrigger WHERE CronJobDetail.Name like '%$1%'];",
             "        list<AsyncApexJob> apJb = [SELECT TotalJobItems,JobItemsProcessed,NumberOfErrors,CreatedDate,CompletedDate,ExtendedStatus",
             "                                   FROM AsyncApexJob where ApexClass.Name = '$1'",
-            "                                   ORDER BY CompletedDate desc limit 1",
+            "                                   ORDER BY CompletedDate desc limit 1];",
             "        if(ct.size()>0) {",
             "            System.abortJob(ct[0].id);",
             "        }",
@@ -334,6 +363,40 @@
             "task.WhatId = ${5:whatId};",
             "task.IsReminderSet = false;",
             "Insert task;"
+        ]
+    },
+
+    "sosl": {
+        "prefix": "scs-sosl",
+        "body": [
+            "List<List<SObject>> searchList = [FIND '${1:text}' IN ALL FIELDS RETURNING ${2:Object}(${3:fields})];"
+        ],
+        "description": "SOSL query. Ex.: List<List<SObject>> searchList = [FIND 'SFDC' IN ALL FIELDS RETURNING Account(Name), Contact(FirstName,LastName)];"
+    },
+
+    "try-catch": {
+        "prefix": "scs-try-catch scs-trycatch",
+        "body": [
+            "try {",
+            "   ${0}",
+            "} catch (Execption  e) {",
+            "   System.debug('e.getMessage(): ' + e.getMessage());",
+            "   System.debug('e.getStackTraceString(): ' + e.getStackTraceString());",
+            "}"
+        ] 
+    },
+
+    "isBlank": {
+        "prefix": "scs-isBlank",
+        "body": [
+            "String.isBlank(${1:var})"
+        ]
+    },
+
+    "isNotBlank": {
+        "prefix": "scs-isNotBlank",
+        "body": [
+            "String.isNotBlank(${1:var})"
         ]
     }
 
