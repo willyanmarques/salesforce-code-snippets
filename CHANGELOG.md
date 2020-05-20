@@ -16,13 +16,11 @@
 
 ## Added
 - **New HTML snippets**
-    - `scs-auraif`
-    - `scs-button`
-    - `scs-button-group`
-    - `scs-datatable`
-    - `scs-listView`
-    - `scs-spinner`
-    - `scs-aura-iteration`
+    - `scs-aura-if-else`
+
+## Added
+- **New HTML snippets**
+- `scs-refresh-view`
 
 ## Fixed
 - **New parameter for toast snippet in HTML snippets**

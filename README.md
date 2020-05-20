@@ -66,6 +66,7 @@ Here is some examples how to use and how good and pratice is use it.
 * `scs-action`
 * `scs-toast`
 * `scs-today`
+* `scs-refresh-view`
 
 ### Html
 
@@ -74,7 +75,8 @@ Here is some examples how to use and how good and pratice is use it.
 * `scs-doInt`
 * `scs-input`
 * `scs-combobox`
-* `scs-auraif`
+* `scs-aura-if`
+* `scs-aura-if-else`
 * `scs-button`
 * `scs-button-group`
 * `scs-datatable`
