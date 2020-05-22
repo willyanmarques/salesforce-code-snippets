@@ -44,5 +44,12 @@
             "\\$A.localizationService.formatDate(new Date(), \"DD/MM/YYYY\");"
         ],
         "description": ""
+    },
+    "refreshView": {
+        "prefix": "scs-refresh-view",
+        "body": [
+            "$A.get(\"e.force:closeQuickAction\").fire();"
+        ],
+        "description": ""
     }
 }
