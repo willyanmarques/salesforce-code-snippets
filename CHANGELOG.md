@@ -1,4 +1,4 @@
-# [1.0.2] May 25th, 2020
+# [1.0.2] May 22th, 2020
 
 ## Added
 - **New Apex snippets**
@@ -9,6 +9,15 @@
     - `scs-isBlank`
     - `scs-isNotBlank`
 
+## Added
+- **New HTML snippets**
+    - `scs-aura-if-else`
+
+## Added
+- **New HTML snippets**
+    - `scs-refresh-view`
+
+
 ## Fixed
 - **scs-batch (removed mocked Object and add a "];" in a soql sentence**
 
@@ -16,12 +25,14 @@
 
 ## Added
 - **New HTML snippets**
-    - `scs-aura-if-else`
-
-## Added
-- **New HTML snippets**
-- `scs-refresh-view`
-
+    - `scs-auraif`
+    - `scs-button`
+    - `scs-button-group`
+    - `scs-datatable`
+    - `scs-listView`
+    - `scs-spinner`
+    - `scs-aura-iteration`
+    
 ## Fixed
 - **New parameter for toast snippet in HTML snippets**
 
